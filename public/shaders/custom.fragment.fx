@@ -11,6 +11,8 @@ uniform sampler2D image;
 out vec4 FragColor;
 
 void main() {
-    // Color
-    FragColor = texture(image, model_uv);
+    // Negative Color Shader
+    vec4 color = texture(image, model_uv);
+
+    FragColor = vec4(1.0 - color.r, 1.0 - color.g, 1.0 - color.b, 1.0);
 }
