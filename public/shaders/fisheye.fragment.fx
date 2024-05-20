@@ -35,7 +35,7 @@ void main() {
     vec2 fish_eye_textCoord = vec2(radius * cos(theta), radius * sin(theta));
 
     // Re-scale final texture coordinate
-    vec2 final_textCoord = 0.5 * (fish_eye_textCoord + 1.0);
+    vec2 final_textCoord = clamp(0.5 * (fish_eye_textCoord + 1.0), 0.0, 1.0);
 
     // Color
     FragColor = texture(image, final_textCoord);
